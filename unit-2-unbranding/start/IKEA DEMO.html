@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+
+	<!--
+	About this page:
+
+	-->
+
+	<title>Unbranding IKEA</title>
+
+	<style>
+
+		body {
+			background-color: #ffd506;
+			font-family: Helvetica, Arial, sans-serif;
+		}
+
+		h1 {
+			text-align:center;
+			/*color: red;*/
+		}
+
+		#everything {
+			width:400px;
+			height:400px;
+			/*background-color: gray;*/
+			/*margin: 500px;*/
+
+/*
+			margin-top: 120px;
+			margin-right: auto;
+			margin-bottom: 80px;
+			margin-left: auto;*/
+
+			margin: 120px auto 80px auto;
+
+			/*margin: 0 auto;*/
+
+			background-image:url(../Assets/Images/wrench.png);
+		}
+
+#everything:hover {
+			cursor: pointer;
+			background-image:url(../Assets/Images/clock.png);
+		}
+
+	</style>
+
+	
+</head>
+<body>
+
+	<div id="everything">
+
+	</div>
+
+	<h1>Everything You Need</h1>
+
+	<script type="text/javascript">
+
+	let targetElement = document.querySelector("#everything");
+
+	targetElement.addEventListener("mouseover", function(){
+		console.log("Hey this worked!");
+	})
+
+	</script>
+</body>
+</html>
