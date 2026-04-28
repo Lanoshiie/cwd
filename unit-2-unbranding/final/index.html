@@ -1,15 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
+  <title>Cheapmu</title>
 
-	<!--
-	About this page:
+  <!--
+    ARTIST STATEMENT:
+    This project is an "unbranding" of Temu, the online shopping site.
+    Temu uses bright colors and fun slogans to hide the fact that their
+    products are made with cheap labor. My version, "Cheapmu," says the
+    quiet part out loud. Instead of "Hello Spring Deals" it says
+    "Hello Mindless Consumers" and instead of "Shop The New Season"
+    it says "Shop The Latest Cheap Labour." The mouseover effect lets
+    you see the real Temu underneath, showing how the nice design
+    covers up something uglier.
+  -->
 
-	-->
-	<title>Unbranding</title>
-	
+  <style>
+
+    body { font-family: Arial, sans-serif; margin: 0; }
+
+    /* black bar at the top */
+    #topbar { background-color: black; color: white; padding: 6px 15px; font-size: 13px; }
+
+    #joinbutton { background-color: orange; color: white; border: none; padding: 5px 12px; font-weight: bold; float: right; }
+
+    /* green nav bar */
+    #navbar { background-color: #3a7d44; padding: 8px 15px; color: white; font-size: 13px; }
+
+    #logo { background-color: orange; color: white; font-weight: bold; padding: 4px 8px; display: inline-block; }
+
+    /* green hero banner */
+    #herobanner { background-color: #6abf69; padding: 30px 20px; min-height: 180px; }
+
+    #herobanner h1 { font-size: 30px; color: black; font-weight: 900; }
+
+    #shopnow { background-color: orange; color: white; border: none; padding: 10px 20px; font-size: 15px; font-weight: bold; }
+
+    /* warning bar */
+    #warningbar { background-color: #e8e8e8; padding: 8px 15px; font-size: 12px; color: red; font-weight: bold; }
+
+    /* product boxes */
+    .productbox { border: 1px solid #ccc; padding: 6px; width: 120px; text-align: center; display: inline-block; margin-right: 8px; }
+
+    .imagebox { background-color: #cccccc; width: 110px; height: 80px; margin-bottom: 5px; }
+
+    .price { color: orange; font-weight: bold; font-size: 13px; }
+
+    /* rollover box - holds both images stacked on top of each other */
+    /* I learned about position relative from the class handout */
+    #rolloverbox { position: relative; width: 800px; margin: 20px auto; }
+
+    #rolloverbox img { width: 800px; display: block; }
+
+    /* original temu image is hidden by default */
+    #originalimage { position: absolute; top: 0; left: 0; display: none; }
+
+    #hoverhint { text-align: center; color: gray; font-size: 12px; }
+
+  </style>
 </head>
 <body>
-	<h1>Hello, world!</h1>
+
+  <!-- black top bar -->
+  <div id="topbar">
+    Free Shipping &nbsp;&nbsp;&nbsp; Free returns Up to 90 days &nbsp;&nbsp;&nbsp; Get The Cheapmu App
+    <button id="joinbutton">Join Now &gt;</button>
+  </div>
+
+  <!-- green nav bar -->
+  <div id="navbar">
+    <span id="logo">CHEAP<br>MU</span>
+    &nbsp;&nbsp;&nbsp;&nbsp; Mediocre-Selling Items
+    &nbsp;&nbsp;&nbsp;&nbsp; 2-Star Rated
+    &nbsp;&nbsp;&nbsp;&nbsp; Distant-Warehouses
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" placeholder="Blue Cheese">
+    <button>search</button>
+  </div>
+
+  <!-- main banner -->
+  <div id="herobanner">
+    <h1>HELLO MINDLESS CONSUMERS<br>SHOP THE LATEST CHEAP LABOUR</h1>
+    <button id="shopnow">SHOP NOW &gt;</button>
+
+    <!-- float right pushes these product boxes to the right side -->
+    <div style="float: right; margin-top: -100px;">
+      <div class="productbox"><div class="imagebox"></div>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="productbox"><div class="imagebox"></div>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    </div>
+  </div>
+
+  <!-- warning bar - flips temu's reassuring text into warnings -->
+  <div id="warningbar">
+    Why (Would You) Choose Cheapmu? &nbsp;&nbsp; Not Secure | Unsafe Payment | May Not Arrive &gt;
+    <br>&#9888; Multiple Scam Issues...
+  </div>
+
+  <p style="text-align:center; margin-top: 20px; font-size: 13px; color: gray;">Hover over the image to see what Cheapmu is hiding:</p>
+
+  <!-- rollover section - hover swaps my parody image for the real temu one -->
+  <div id="rolloverbox">
+    <img id="parodyimage" src="cheapmu-banner.png" alt="cheapmu parody">
+    <img id="originalimage" src="temu-original.png" alt="original temu">
+  </div>
+
+  <p id="hoverhint">^ hover over the image above</p>
+
+  <!-- deals section at the bottom -->
+  <div style="padding: 20px;">
+
+    <div style="display: inline-block; width: 45%; vertical-align: top;">
+      <p style="font-weight:bold; color:orange; border-bottom: 2px solid #ccc;">LEGITIMATE DEALS</p>
+      <div class="productbox"><div class="imagebox"></div>&#9733;&#9733;&#9733;&#9733;&#9733;<p class="price">$50.00</p></div>
+      <div class="productbox"><div class="imagebox"></div>&#9733;&#9733;&#9733;&#9733;&#9733;<p class="price">$2.49</p></div>
+    </div>
+
+    <div style="display: inline-block; width: 45%; vertical-align: top;">
+      <p style="font-weight:bold; color:red; border-bottom: 2px solid #ccc;">ENDS SOON!!!</p>
+      <div class="productbox"><div class="imagebox"></div>&#9733;&#9733;&#9733;&#9733;&#9733;<p class="price">$5.99</p></div>
+      <div class="productbox"><div class="imagebox"></div>&#9733;&#9733;&#9733;&#9733;&#9733;<p class="price">$0.09</p></div>
+    </div>
+
+  </div>
+
+  <script>
+    // from the class handout - makes the rollover effect work
+    var box = document.getElementById("rolloverbox");
+    var parody = document.getElementById("parodyimage");
+    var original = document.getElementById("originalimage");
+
+    // mouse on = show real temu
+    box.addEventListener("mouseover", function() {
+      parody.style.display = "none";
+      original.style.display = "block";
+    });
+
+    // mouse off = show my parody again
+    box.addEventListener("mouseout", function() {
+      parody.style.display = "block";
+      original.style.display = "none";
+    });
+  </script>
+
 </body>
 </html>
