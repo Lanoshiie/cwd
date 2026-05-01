@@ -1,29 +1,296 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- 
-	About this page:
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+ 
+  <title>The Daily Truffle</title>
+
+  <!--
+    CREATIVE STATEMENT:
+    The Daily Truffle is a feel-good chocolate newspaper designed to bring warmth and whimsy to everyday reading. I chose a pink-to-lavender background gradient to evoke the soft, indulgent feeling of unwrapping a box of chocolates. The Dancing Script font in the masthead gives the paper an elegant, handcrafted identity, like a patisserie sign, while Playfair Display brings the classic newspaper gravitas to headlines. The two-column desktop layout mirrors a traditional broadsheet, with a large hero story on the left and a sidebar of smaller stories on the right. I used warm chocolate brown for text to tie the color palette together and keep the theme cohesive. The decorative divider lines under the masthead
+    reference real newspaper design conventions. Overall, I wanted the page to feel like a cozy afternoon treat, something you'd read with a cup of hot cocoa.
+
+    RESOURCES USED:
+    - Bootstrap 5 documentation: https://getbootstrap.com/docs/5.3/
+    - Google Fonts: https://fonts.google.com/
+    - Unsplash (for placeholder image descriptions): https://unsplash.com/
+  -->
+
+  <style>
+    :root {
+      --pink-light: #fce4ec;
+      --pink-mid: #f8bbd0;
+      --purple: #7b1fa2;
+      --purple-light: #ce93d8;
+      --rose: #c2185b;
+      --brown: #3e1c00;
+      --brown-light: #6d4c41;
+      --cream: #fff8f0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #ede7f6 100%);
+      color: var(--brown);
+      font-family: 'Lato', sans-serif;
+      min-height: 100vh;
+    }
+
+    .masthead {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      border-bottom: 3px double var(--purple);
+    }
+
+    .masthead h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      color: var(--purple);
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .masthead .tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--brown-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .masthead .date-line {
+      font-size: 0.75rem;
+      color: var(--brown-light);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--purple-light);
+      border-bottom: 1px solid var(--purple-light);
+      padding: 0.3rem 0;
+      margin-top: 0.5rem;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--purple);
+      border-bottom: 2px solid var(--purple);
+      padding-bottom: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+  
+    .hero-story img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border: 2px solid var(--pink-mid);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-story h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      color: var(--brown);
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-story p {
+      font-size: 0.92rem;
+      color: var(--brown-light);
+      line-height: 1.7;
+    }
+
+    .sidebar-story-large {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--purple-light);
+    }
+
+    .sidebar-story-large img {
+      width: 130px;
+      height: 90px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--pink-mid);
+    }
+
+    .sidebar-story-large h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      color: var(--brown);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .sidebar-story-small {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--purple-light);
+    }
+
+    .sidebar-story-small:last-child {
+      border-bottom: none;
+    }
+
+    .sidebar-story-small img {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--pink-mid);
+    }
+
+    .sidebar-story-small h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      color: var(--brown);
+      line-height: 1.35;
+      margin: 0;
+    }
+
+  
+    .col-divider {
+      border-left: 1px solid var(--purple-light);
+    }
 
 
-	-->
-	<title>Fake News</title>
-	
-  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    footer {
+      text-align: center;
+      padding: 1.2rem;
+      margin-top: 2rem;
+      border-top: 3px double var(--purple);
+      font-size: 0.75rem;
+      color: var(--brown-light);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
 
-  	<style>
+  
+    @media (max-width: 767px) {
+      .col-divider {
+        border-left: none;
+        border-top: 1px solid var(--purple-light);
+        padding-top: 1.5rem;
+        margin-top: 1.5rem;
+      }
 
-  .col {background-color: cornflowerblue;
-  	height: 100px}
-
-  .first{background-color: cornsilk;
-  }
-</style> 
+      .sidebar-story-large img {
+        width: 90px;
+        height: 65px;
+      }
+    }
+  </style>
 </head>
 <body>
-	<h1>Hello, world!</h1>
+
+  <header class="masthead">
+    <h1>The Daily Truffle</h1>
+    <p class="tagline">"All the news that's fit to eat"</p>
+    <p class="date-line">Wednesday, April 29, 2026 &nbsp;·&nbsp; Vol. 1, No. 1 &nbsp;·&nbsp; Established in Sweetness</p>
+  </header>
+
+
+  <main class="container py-4">
+    <div class="row">
+
+      <div class="col-12 col-md-7 hero-story">
+        <p class="section-label">Top Story</p>
+
+  
+        <img
+          src="images/hotchocolate.png"
+          alt="A steaming mug of hot cocoa on a rainy windowsill"
+        >
+
+        <h2>Scientists Confirm: Hot Cocoa on Rainy Days Proven to Cure Bad Moods</h2>
+        <p>
+          Researchers at the International Institute of Confectionery Wellness published landmark findings this week, confirming what chocolate lovers have known for centuries, a warm mug of cocoa on a grey, rainy afternoon is, in fact, the single most effective mood-lifting activity available to humankind. The study, which followed 3,000 participants across 14 countries, found that 99.8% reported
+          feeling "significantly cozier" within minutes of their first sip.
+        </p>
+        <p>
+          "We are honestly a little embarrassed it took this long to prove,"said lead researcher Dr. Amélie Fondue. "The data could not be clearer. Hot cocoa works." World governments are expected to respond with new public hot cocoa initiatives
+          by the end of the quarter.
+        </p>
+      </div>
+
+      <div class="col-12 col-md-5 col-divider ps-md-4">
+        <p class="section-label">More Good News</p>
+
+        <div class="sidebar-story-large">
+          <img
+            src="images/chocolatefountain.png"
+            alt="Stacked dark chocolate bars broken into pieces"
+          >
+          <h3>World Record Broken, Largest Chocolate Fountain Officially Opens in Switzerland</h3>
+        </div>
+
+    
+        <div class="sidebar-story-large">
+          <img
+            src="images/womaneatingchocolate.png"
+            alt="Person reading a book while eating chocolate"
+          >
+          <h3>Study Finds Eating Chocolate While Reading Is the Peak Human Experience</h3>
+        </div>
+
+        <p class="section-label mt-2">Also Today</p>
+
+        
+        <div class="sidebar-story-small">
+          <img
+            src="images/chocolatecoins.png"
+            alt="Dark chocolate squares arranged neatly"
+          >
+          <h3>Dark Chocolate Declared Official Currency of Small Mountain Town</h3>
+        </div>
+
+        
+        <div class="sidebar-story-small">
+          <img
+            src="images/truffles.png"
+            alt="Colorful chocolate truffles on display at a festival"
+          >
+          <h3>Annual Truffle Festival Draws Thousands; Nobody Goes Home Sad</h3>
+        </div>
+
+        <div class="sidebar-story-small">
+          <img
+            src="images/puppies.png"
+            alt="A chocolate Labrador puppy sitting happily"
+          >
+          <h3>Puppy Befriends Chocolate Lab (The Dog Kind), Town Delighted</h3>
+        </div>
+
+        <div class="sidebar-story-small">
+          <img
+            src="images/dubaichocolate.png"
+            alt="A chocolatier carefully crafting a new chocolate flavor"
+          >
+          <h3>Local Chocolatier Discovers New Flavor, Describes It As "Life-Changing"</h3>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 The Daily Truffle &nbsp;·&nbsp; All stories guaranteed good &nbsp;·&nbsp; No bad news since our founding
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
