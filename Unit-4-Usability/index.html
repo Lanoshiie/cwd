@@ -8,11 +8,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!--
-    Creative choices: I chose a clean, minimal layout using Bootstrap's grid system
-    to present each usability task clearly side by side with its screenshot.
-    The color scheme is neutral to keep focus on the content and data.
-    The SUS calculator is interactive to let readers engage with the scoring system
-    themselves rather than just reading a static result.
+    Creative choices: I chose a clean, minimal layout using Bootstrap's grid system to present each usability task clearly side by side with its screenshot. The color scheme is neutral to keep focus on the content and data. The SUS calculator is interactive to let readers engage with the scoring system themselves rather than just reading a static result. 
+
+    Coding: I used an AI to assist in structuring the JavaScript logic for the SUS calculator and to generate the initial Bootstrap 5 grid layout. All usability testing data, task descriptions, and design iterations (Figma/Analog) are my original work.
   -->
 </head>
 <body>
@@ -46,7 +44,7 @@
   <!-- Task 1 -->
   <div class="row mb-5 align-items-center">
     <div class="col-md-6">
-      <img src="images/task1.png" alt="Google Maps suggest an edit screen for UMW Hospital" class="img-fluid rounded">
+    <img src="https://raw.githubusercontent.com/Lanoshiie/cwd/main/Unit-4-Usability/final/images/task1.png" alt="Google Maps suggest an edit screen for UMW Hospital" class="img-fluid rounded"> 
     </div>
     <div class="col-md-6">
       <h3>Task 1 — Add a Location</h3>
@@ -58,7 +56,7 @@
   <!-- Task 2 -->
   <div class="row mb-5 align-items-center">
     <div class="col-md-6">
-      <img src="images/task2.png" alt="Google Maps search results showing Fredericksburg Museum" class="img-fluid rounded">
+    <img src="https://raw.githubusercontent.com/Lanoshiie/cwd/main/Unit-4-Usability/final/images/task2.png" alt="Google Maps search results showing Fredericksburg Museum" class="img-fluid rounded">
     </div>
     <div class="col-md-6">
       <h3>Task 2 — Find the Closest Museum and Exact Distance</h3>
@@ -70,7 +68,7 @@
   <!-- Task 3 -->
   <div class="row mb-5 align-items-center">
     <div class="col-md-6">
-      <img src="images/task3.png" alt="Google Maps listing for Olive Garden showing closing time" class="img-fluid rounded">
+    <img src="https://raw.githubusercontent.com/Lanoshiie/cwd/main/Unit-4-Usability/final/images/task3.png" alt="Google Maps listing for Olive Garden showing closing time" class="img-fluid rounded">
     </div>
     <div class="col-md-6">
       <h3>Task 3 — Find the Closest Olive Garden and Closing Time</h3>
@@ -82,7 +80,7 @@
   <!-- Task 4 -->
   <div class="row mb-5 align-items-center">
     <div class="col-md-6">
-      <img src="images/task4.png" alt="Google Maps directions from Olive Garden to Target showing 22 minute walk" class="img-fluid rounded">
+     <img src="https://raw.githubusercontent.com/Lanoshiie/cwd/main/Unit-4-Usability/final/images/task4.png" alt="Google Maps directions from Olive Garden to Target showing 22 minute walk" class="img-fluid rounded">
     </div>
     <div class="col-md-6">
       <h3>Task 4 — Walk Time from Olive Garden to Closest Target</h3>
@@ -94,7 +92,7 @@
   <!-- Task 5 -->
   <div class="row mb-5 align-items-center">
     <div class="col-md-6">
-      <img src="images/task5.png" alt="Google Maps Street View showing people waving in Dawson City Yukon" class="img-fluid rounded">
+     <img src="https://raw.githubusercontent.com/Lanoshiie/cwd/main/Unit-4-Usability/final/images/task5.png" alt="Google Maps Street View showing people waving in Dawson City Yukon" class="img-fluid rounded"> 
     </div>
     <div class="col-md-6">
       <h3>Task 5 — Find People Waving at the Google Street View Camera</h3>
@@ -104,4 +102,100 @@
   </div>
 
 </div>
+<!-- SUS CALCULATOR -->
+<div class="container my-5">
+  <h2 class="mb-4">SUS Calculator</h2>
+  <p>Rate each statement from 1 (Strongly Disagree) to 5 (Strongly Agree) based on your experience with Google Maps.</p>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label class="form-label">1. I think that I would like to use this system frequently</label>
+        <input type="number" class="form-control" id="q1" min="1" max="5" placeholder="1-5">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">2. I found the system unnecessarily complex</label>
+        <input type="number" class="form-control" id="q2" min="1" max="5" placeholder="1-5">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">3. I thought the system was easy to use</label>
+        <input type="number" class="form-control" id="q3" min="1" max="5" placeholder="1-5">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">4. I think that I would need the support of a technical person to use this system</label>
+        <input type="number" class="form-control" id="q4" min="1" max="5" placeholder="1-5">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">5. I found the various functions in this system were well integrated</label>
+        <input type="number" class="form-control" id="q5" min="1" max="5" placeholder="1-5">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label class="form-label">6. I thought there was too much inconsistency in this system</label>
+        <input type="number" class="form-control" id="q6" min="1" max="5" placeholder="1-5">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">7. I imagine that most people would learn to use this system very quickly</label>
+        <input type="number" class="form-control" id="q7" min="1" max="5" placeholder="1-5">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">8. I found the system very cumbersome to use</label>
+        <input type="number" class="form-control" id="q8" min="1" max="5" placeholder="1-5">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">9. I felt very confident using the system</label>
+        <input type="number" class="form-control" id="q9" min="1" max="5" placeholder="1-5">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">10. I needed to learn a lot of things before I could get going with this system</label>
+        <input type="number" class="form-control" id="q10" min="1" max="5" placeholder="1-5">
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-dark" onclick="calculateSUS()">Calculate SUS Score</button>
+
+  <div id="result" class="mt-4 p-3 bg-light rounded" style="display:none;">
+    <h4>Your SUS Score: <span id="susScore"></span></h4>
+    <p id="susRating"></p>
+  </div>
+</div>
+
+<script>
+function calculateSUS() {
+  const values = [];
+  for (let i = 1; i <= 10; i++) {
+    const val = parseInt(document.getElementById('q' + i).value);
+    if (isNaN(val) || val < 1 || val > 5) {
+      alert('Please enter a value between 1 and 5 for all questions.');
+      return;
+    }
+    values.push(val);
+  }
+
+  // SUS formula: odd questions subtract 1, even questions subtract from 5
+  let score = 0;
+  for (let i = 0; i < 10; i++) {
+    if (i % 2 === 0) {
+      score += values[i] - 1;
+    } else {
+      score += 5 - values[i];
+    }
+  }
+  score *= 2.5;
+
+  let rating = '';
+  if (score >= 90) rating = 'Excellent — Best Imaginable';
+  else if (score >= 80) rating = 'Good';
+  else if (score >= 70) rating = 'OK';
+  else if (score >= 50) rating = 'Poor';
+  else rating = 'Awful';
+
+  document.getElementById('susScore').textContent = score.toFixed(1) + ' / 100';
+  document.getElementById('susRating').textContent = 'Rating: ' + rating;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
 </html> 
