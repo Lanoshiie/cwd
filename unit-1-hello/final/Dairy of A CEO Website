@@ -1,18 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Hello</title>
-	<link rel="stylesheet" href="https://zachwhalen.github.io/cwd-hub/ring/onionring.css">
+  <meta charset="UTF-8">
+  <title>Diary of a CEO Fan Page</title>
+
+  <!--
+    Fan page for Diary of a CEO by Steven Bartlett.
+    Design inspired by late 1990s web pages: plain background, basic colors, simple layout.
+    Reference: https://www.webdesignmuseum.org/web-design-history?timeline=1998-2002
+  -->
+
+  <style>
+    body {
+      background-color: #ffffcc;
+      font-family: Comic Sans MS, Arial, sans-serif;
+      color: #330000;
+      margin: 40px;
+    }
+
+    h1 {
+      color: #990000;
+      text-align: center;
+    }
+
+    h2 {
+      color: #660000;
+      border-bottom: 2px solid #990000;
+    }
+
+    a {
+      color: #0000cc;
+    }
+
+    img {
+      border: 3px solid #990000;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
-	<h1>The Diary of A CEO!!!</h1>
+
+  <h1>★ Diary of a CEO Fan Page ★</h1>
+  <p style="text-align:center;">The best podcast on the internet, hosted by Steven Bartlett.</p>
+
+  <hr>
+
+  <h2>What is it?</h2>
+  <img src="images/podcastcover.png" alt="Diary of a CEO podcast cover" width="200" align="right">
+  <p>
+    Diary of a CEO is a podcast where Steven Bartlett interviews the world's most
+    successful people, entrepreneurs, scientists, athletes, and thinkers. Every
+    episode will make you think differently about your life.
+  </p>
+
+  <h2>About Steven Bartlett</h2>
+  <img src="images/steven.jpg" alt="Steven Bartlett smiling" width="200" align="left" style="margin-right: 15px;">
+  <p>
+    Steven Bartlett is a British entrepreneur who co-founded Social Chain and became
+    the youngest Dragon on BBC's Dragons' Den at age 27. He is also the author of
+    Happy Sexy Millionaire.
+  </p>
+
+  <h2>My Favourite Episodes</h2>
+  <ul>
+    <li>Andrew Huberman — The Science of Sleep</li>
+    <li>Alex Hormozi — How to Get Rich Without Getting Lucky</li>
+    <li>Mel Robbins — The 5 Second Rule</li>
+    <li>Simon Sinek — Find Your Why</li>
+  </ul>
+
+  <h2>A Quote I Love</h2>
+  <p><em>"Clarity comes from action, not thought." — Steven Bartlett</em></p>
+
+  <hr>
+  <p style="text-align:center; font-size: 12px;">
+    Made for CWD class · 2026 · Not affiliated with Steven Bartlett
+  </p>
+
 </body>
-<p>this book is a self improvement book which i have been reading lately, the author, Steven Bartlett is an English entrepreneur, investor and podcaster. In 2014, he founded Social Chain, and in 2017, started The Diary of a CEO podcast, which Spotify Wrapped ranked second in its list of most popular podcasts globally in 2025.</p>
-<img src="../assets/StevenBartlett.jpeg"/> 
-
-<p>i won this book during a university module and have used it as a daily guide, it teaches you life lessons and how to be has served me well</p> 
-
- <img src="../assets/times100.jpeg"/> 
-
-
-</html>
